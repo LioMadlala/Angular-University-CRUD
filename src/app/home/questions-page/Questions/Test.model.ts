@@ -219,3 +219,7 @@ export let test: Question[] = [
     ],
   },
 ];
+
+export let Answers:any[]=[
+  'D','D','D','D','D','D','D','D','D','B'
+]

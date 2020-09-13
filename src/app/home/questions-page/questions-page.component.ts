@@ -14,6 +14,8 @@ export class QuestionsPageComponent implements OnInit {
   questionIndex:number = 0;
   public answer:any ={};
   public currentIndex=0;
+
+  public progres:number=0;
   ngOnInit(): void {
 
   }
@@ -23,8 +25,15 @@ export class QuestionsPageComponent implements OnInit {
     if(this.questionIndex < this.myTest.length)
   {
     this.questionIndex ++;
+
+  }else
+  if(this.questionIndex>=this.myTest.length)
+  {
+
+    this.progres =100;
+    this.questionIndex =this.myTest.length-1;
   }
-    this.currentIndex  =this.questionIndex;
+  this.updateProgress(1);
   }
 
   previousQuestion():void
@@ -36,7 +45,7 @@ export class QuestionsPageComponent implements OnInit {
     }else{
       this.questionIndex = 0;
     }
-
+    this.updateProgress(-1);
   }
 
   onItemChange(yourAnswer,questionNumber)
@@ -45,6 +54,8 @@ export class QuestionsPageComponent implements OnInit {
 
   }
 
-
+  updateProgress(direction:number){
+      this.progres += direction*(100/this.myTest.length);
+  }
 
 }

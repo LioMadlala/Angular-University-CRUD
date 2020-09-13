@@ -3,8 +3,8 @@
     <div class="box p-5 box-1">
    <app-questions-page></app-questions-page>
       <div id="next_and_prev">
-        <button mdbBtn type="button" color="danger" mdbWavesEffect (click)="prev()">prev</button>
-        <button mdbBtn type="button" color="primary" mdbWavesEffect (click)="next()">next</button>
+        <button [disabled]='progress == 0?true:false' mdbBtn type="button" color="danger" mdbWavesEffect (click)="prev()">prev</button>
+        <button [disabled]='progress == 100?true:false' mdbBtn type="button" color="primary" mdbWavesEffect (click)="next()">next</button>
       </div>
 
     </div>

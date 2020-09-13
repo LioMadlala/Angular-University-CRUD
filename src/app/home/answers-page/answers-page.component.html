@@ -2,8 +2,12 @@
   <!--{number:questionNumber,answer:yourAnswer}-->
   <div class="h2">Questions</div>
   <div class="mt-4 row">
-    <div class="col-3" *ngFor="let item of userAnswers">
-      <p>{{item.number}} {{item.answer}} <mdb-icon fas icon="check"></mdb-icon></p>
+    <div class="col-3" *ngFor="let item of userAnswers,let i =index">
+      <p>
+        {{item.number}} {{item.answer}} <mdb-icon class="pass" *ngIf="correctAnswers[i] == item.answer" fas icon="check"></mdb-icon>
+        <mdb-icon class="fail" *ngIf="correctAnswers[i] != item.answer" fas icon="times"></mdb-icon>
+      </p>
+
     </div>
 
   </div>

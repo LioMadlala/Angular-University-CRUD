@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Answers } from '../questions-page/Questions/Test.model';
 
 @Component({
   selector: 'app-answers-page',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AnswersPageComponent implements OnInit {
 
   userAnswers:any[] =[];
+  correctAnswers:any[]=Answers;
   constructor() { }
 
   ngOnInit(): void {

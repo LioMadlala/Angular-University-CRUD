@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(QuestionsPageComponent) questionPage:QuestionsPageComponent;
   @ViewChild(AnswersPageComponent) answersPage:AnswersPageComponent;
+  progress:number =0;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +23,9 @@ export class HomeComponent implements OnInit {
   {
     this.questionPage.nextQuestion();
     this.onClickNext();
+    this.progress = this.questionPage.progres;
   }
+
 
   prev()
   {
