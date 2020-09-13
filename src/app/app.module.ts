@@ -10,17 +10,27 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { GetStartedComponent } from './get-started/get-started.component';
 
+import { QuestionsPageComponent } from './home/questions-page/questions-page.component';
+import { AnswersPageComponent } from './home/answers-page/answers-page.component';
+import { HomeComponent } from './home/HomeComponent.component';
+import {ProgressBarModule} from "angular-progress-bar"
+
 @NgModule({
   declarations: [
     AppComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    HomeComponent,
+    QuestionsPageComponent,
+    AnswersPageComponent,
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

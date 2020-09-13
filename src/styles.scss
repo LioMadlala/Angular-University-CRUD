@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+.row{
+  margin: 0px;
+}
+
+
+////////////////////////
+///////////Questions and answers start/////////
+.box-1{
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+.box-2{
+  background-color: rgb(213, 213, 213);
+}
+::ng-deep {
+.progress-outer[_ngcontent-hgv-c106] {
+  width: 96%;
+  margin: 10px 2%;
+  padding: 0px !important;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  color: #fff;
+  border-radius: 20px !important;
+  text-align: center;
+  font-size: smaller !important;
+}
+}
+
+.my-question{
+  font-size: 1.3rem;
+  color: rgb(131, 131, 131);
+
+}
+.question__section{
+  padding: 1rem;
+}
+.inner-box{
+  min-height: 60%;
+  background-color: white;
+
+  border-radius:10px;
+}
+
+
+///////////Questions and answers end/////////
