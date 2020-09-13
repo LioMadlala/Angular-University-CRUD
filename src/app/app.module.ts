@@ -7,16 +7,20 @@ import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { GetStartedComponent } from './get-started/get-started.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GetStartedComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
