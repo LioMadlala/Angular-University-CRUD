@@ -24,16 +24,16 @@ export class QuestionsPageComponent implements OnInit {
   {
     if(this.questionIndex < this.myTest.length)
   {
-    this.questionIndex ++;
 
+    this.questionIndex ++;
+    this.updateProgress(1);
   }else
   if(this.questionIndex>=this.myTest.length)
   {
 
-    this.progres =100;
     this.questionIndex =this.myTest.length-1;
   }
-  this.updateProgress(1);
+
   }
 
   previousQuestion():void
@@ -41,15 +41,16 @@ export class QuestionsPageComponent implements OnInit {
     if(this.questionIndex > 0)
     {
       this.questionIndex --;
-
+      this.updateProgress(-1);
     }else{
       this.questionIndex = 0;
     }
-    this.updateProgress(-1);
+
   }
 
   onItemChange(yourAnswer,questionNumber)
   {
+    console.log({results:yourAnswer})
     this.answer = {number:questionNumber,answer:yourAnswer};
 
   }

@@ -16,7 +16,10 @@ export class AnswersPageComponent implements OnInit {
   }
 
   appendAnswer(answer:any){
+
+    if(answer.answer){
     this.userAnswers.push(answer);
+  }
   }
 
   deleteAnswer(index:number)

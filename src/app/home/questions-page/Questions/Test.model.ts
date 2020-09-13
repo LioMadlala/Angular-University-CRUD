@@ -221,5 +221,5 @@ export let test: Question[] = [
 ];
 
 export let Answers:any[]=[
-  'D','D','D','D','D','D','D','D','D','B'
+  'D','D','D','D','D','B','C','A','D','B'
 ]

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(QuestionsPageComponent) questionPage:QuestionsPageComponent;
   @ViewChild(AnswersPageComponent) answersPage:AnswersPageComponent;
   progress:number =0;
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -29,14 +29,17 @@ export class HomeComponent implements OnInit {
 
   prev()
   {
-    this.questionPage.previousQuestion();
+      this.questionPage.previousQuestion();
       this.answersPage.deleteAnswer(this.questionPage.questionIndex);
+      this.progress = this.questionPage.progres;
 
   }
   answer:any={}
   onClickNext(){
     this.answer=this.questionPage.answer;
+
    this.answersPage.appendAnswer(this.answer);
+
   }
 
 }
