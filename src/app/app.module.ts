@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { GetStartedComponent } from './get-started/get-started.component';
 
@@ -22,7 +22,7 @@ import {ProgressBarModule} from "angular-progress-bar"
     HomeComponent,
     QuestionsPageComponent,
     AnswersPageComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +30,8 @@ import {ProgressBarModule} from "angular-progress-bar"
     MDBBootstrapModule.forRoot(),
     FormsModule,
     AppRoutingModule,
-    ProgressBarModule
+    ProgressBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

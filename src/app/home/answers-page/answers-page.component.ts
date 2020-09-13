@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnswersPageComponent implements OnInit {
 
+  userAnswers:any[] =[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  appendAnswer(answer:any){
+    this.userAnswers.push(answer);
+  }
+
+  deleteAnswer(index:number)
+  {
+    this.userAnswers.splice(index,1);
+  }
 }

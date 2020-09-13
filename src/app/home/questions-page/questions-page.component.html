@@ -7,13 +7,15 @@
     </div>
     <div class="mt-4 question__section">
       <div class="my-question">
-        <p><span>1</span> What are variables in Typescript</p>
+        <p><span>{{questionIndex+1}}</span> {{myTest[questionIndex].question}}</p>
       </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input" id="button-1" name="defaultExampleRadios" mdbInput>
-        <label class="custom-control-label" for="button-1">A Default unchecked</label>
+      <div class="custom-control custom-radio" *ngFor="let answer of myTest[questionIndex].answers;let i=index" >
+        <input type="radio" class="custom-control-input" id="button-{{i}}" name="defaultExampleRadios" mdbInput
+        (change)="onItemChange(answer.position,questionIndex+1)"
+        >
+        <label class="custom-control-label" for="button-{{i}}">{{answer.position}} {{answer.text}}</label>
       </div>
-      <div class="custom-control custom-radio">
+      <!-- <div class="custom-control custom-radio">
         <input type="radio" class="custom-control-input" id="button-2" name="defaultExampleRadios" mdbInput>
         <label class="custom-control-label" for="button-2">A Default unchecked</label>
       </div>
@@ -28,9 +30,9 @@
       <div class="custom-control custom-radio">
         <input type="radio" class="custom-control-input" id="button-5" name="defaultExampleRadios" mdbInput>
         <label class="custom-control-label" for="button-5">A Default unchecked</label>
-      </div>
+      </div> -->
     </div>
 
   </div>
-  
+
 

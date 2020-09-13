@@ -1,4 +1,7 @@
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { AnswersPageComponent } from './answers-page/answers-page.component';
+import { QuestionsPageComponent } from './questions-page/questions-page.component';
 
 @Component({
   selector: 'app-home-component',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild(QuestionsPageComponent) questionPage:QuestionsPageComponent;
+  @ViewChild(AnswersPageComponent) answersPage:AnswersPageComponent;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  next()
+  {
+    this.questionPage.nextQuestion();
+    this.onClickNext();
+  }
+
+  prev()
+  {
+    this.questionPage.previousQuestion();
+      this.answersPage.deleteAnswer(this.questionPage.questionIndex);
+
+  }
+  answer:any={}
+  onClickNext(){
+    this.answer=this.questionPage.answer;
+   this.answersPage.appendAnswer(this.answer);
   }
 
 }

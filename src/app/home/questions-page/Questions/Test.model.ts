@@ -2,7 +2,7 @@ import { Question } from "./qustions.interface";
 
 //http://www.allindiaexams.in/engineering/cse/typescript-mcq-quiz-typescript-online-test
 //https://www.code-sample.com/2019/04/angular-8-7-6-5-4-2-online-test-free.html
-var test: Question[] = [
+export let test: Question[] = [
   {
     question: "Which are the different Data Types supported by Typescript?",
     answers: [
