@@ -13,7 +13,8 @@ import { GetStartedComponent } from './get-started/get-started.component';
 import { QuestionsPageComponent } from './home/questions-page/questions-page.component';
 import { AnswersPageComponent } from './home/answers-page/answers-page.component';
 import { HomeComponent } from './home/HomeComponent.component';
-import {ProgressBarModule} from "angular-progress-bar"
+import {ProgressBarModule} from "angular-progress-bar";
+import { InfoComponent } from './info/info.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {ProgressBarModule} from "angular-progress-bar"
     HomeComponent,
     QuestionsPageComponent,
     AnswersPageComponent,
+    InfoComponent,
 
   ],
   imports: [
