@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Question } from '../home/questions-page/Questions/qustions.interface';
 
 @Component({
@@ -12,6 +13,7 @@ export class InfoComponent implements OnInit {
   //{key:'',vlaue:''}
   infor:any[]=[]
   quetionIndex = 0;
+  button_text ="save";
   qustions:any[]=[
     {
       key:'Age',Question:'How old are you?'
@@ -39,7 +41,7 @@ export class InfoComponent implements OnInit {
     }
   ];
   qustion ={};
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
 
@@ -50,19 +52,33 @@ export class InfoComponent implements OnInit {
   saveAnswer(key:any)
   {
 
-    //set the quetion to start with 1
-    if(this.quetionIndex =0)
-     { this.quetionIndex=1}
+    console.log(key)
+   console.table({index:this.quetionIndex,Question:this.qustions.length})
+      //go to next page
+      if(this.button_text == 'next page')
+      {
+          this.router.navigate(['/home'])
+      }
+      //switch questions
+      if(this.quetionIndex+1 != this.qustions.length)
 
-     
-    if(this.infor.length != this.qustions.length){
+      {
+        this.infor.push({key:key,answer:this.inputValue})
+        this.quetionIndex ++;
+        this.qustion = this.qustions[this.quetionIndex];
+      }
+      else{
+        this.button_text = 'next page'
+      }
 
-      this.infor.push({key:key,answer:this.inputValue})
-
-      this.qustion = this.qustions[this.quetionIndex];
-    }
-    this.quetionIndex ++;
     this.inputValue ='';
 
+
+  }
+
+  deleteInfor(index)
+  {
+    console.log(index)
+    this.infor.splice(index,1);
   }
 }
